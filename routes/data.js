@@ -3,7 +3,8 @@ const router = express.Router();
 
 /* POST data */
 router.post("/", (req, res, next) => {
-  res.send("Everything is ok");
+  const givenUrl = req.body.givenUrl;
+  console.log(`Hello: ${givenUrl}`);
 });
 
 module.exports = router;

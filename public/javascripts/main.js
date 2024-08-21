@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Get scraped data
   async function getScrapData(givenUrl) {
-    console.log(`HI: ${givenUrl}`);
-
     try {
       // API request to fetch data
       const response = await fetch("/scrapdata", {
@@ -27,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ givenUrl }),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      //   if (!response.ok) {
+      //     throw new Error("Network response was not ok");
+      //   }
 
-      const data = response.json();
-      displayScrappedData(data);
+      //   const data = response.json();
+      //   displayScrappedData(data);
     } catch (error) {
       console.error("Error getting scrapped data", error);
     }
