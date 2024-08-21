@@ -18,7 +18,7 @@ const dataRouter = require("./routes/data");
 
 // Use routes
 app.use("/", indexRouter);
-app.use("/scrapdata", dataRouter);
+app.use("/scrapedata", dataRouter);
 
 // Start server
 app.listen(port, () => {

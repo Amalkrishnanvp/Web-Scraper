@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function getScrapData(givenUrl) {
     try {
       // API request to fetch data
-      const response = await fetch("/scrapdata", {
+      const response = await fetch("/scrapedata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
