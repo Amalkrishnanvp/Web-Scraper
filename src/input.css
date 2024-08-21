@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Noto serif";
+}
+body {
+  background-color: #fed0bb;
+}
+.project-heading {
+  color: #461220;
+}
+.scrap-btn {
+  background-color: #b23a48;
+}
+.scrap-btn:hover {
+  background-color: #b94a57;
+}

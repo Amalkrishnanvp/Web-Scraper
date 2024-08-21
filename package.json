@@ -1,0 +1,20 @@
+{
+  "name": "web-scrapper",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/stylesheets/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "express": "^4.19.2",
+    "hbs": "^4.2.0"
+  }
+}
