@@ -9,6 +9,9 @@ app.set("view engine", "hbs");
 // Serve static files from 'public' folder
 app.use(express.static("public"));
 
+// Middleware to handle favicon requests
+app.use("./favicon.ico", (req, res) => res.status(204).end());
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 

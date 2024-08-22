@@ -14,7 +14,7 @@ router.post("/", async (req, res, next) => {
     const $ = cheerio.load(data);
 
     const values = [];
-    $("div").each((index, element) => {
+    $("h3").each((index, element) => {
       values.push($(element).text());
     });
 

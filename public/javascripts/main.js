@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scrapBtn = document.querySelector(".scrap-btn");
   const urlHolder = document.querySelector(".url-holder");
+  const dataShower = document.querySelector(".data-shower");
 
   // Get user entered URL
   scrapBtn.addEventListener("click", () => {
@@ -25,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ givenUrl }),
       });
 
-      //   if (!response.ok) {
-      //     throw new Error("Network response was not ok");
-      //   }
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-      //   const data = response.json();
-      //   displayScrappedData(data);
+      const data = await response.json();
+      displayScrappedData(data);
     } catch (error) {
       console.error("Error getting scrapped data", error);
     }
@@ -38,5 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayScrappedData(data) {
     console.log(data);
+    let listContainer = "";
+    data.forEach((element) => {
+      const li = `<li>${element}</li>`;
+      listContainer += li;
+    });
+
+    dataShower.innerHTML = listContainer;
   }
 });
