@@ -10,9 +10,6 @@ router.post("/", async (req, res, next) => {
   const givenContent = req.body.givenContent;
   const usersChoice = getUsersChoice(givenContent);
 
-  console.log("url: " + givenUrl, "Selected content: " + givenContent);
-  console.log("user choice : " + usersChoice);
-
   try {
     const { data } = await axios.get(givenUrl);
 
@@ -23,8 +20,6 @@ router.post("/", async (req, res, next) => {
     $(usersChoice).each((index, element) => {
       values.push($(element).text());
     });
-
-    console.log(values);
 
     res.status(200).json(values);
   } catch (error) {

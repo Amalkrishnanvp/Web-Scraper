@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scrapBtn = document.querySelector(".scrap-btn");
   const urlHolder = document.querySelector(".url-holder");
-  const dataShower = document.querySelector(".data-shower");
   const contentSelector = document.querySelector("#content-selector");
   const dataList = document.querySelector(".data-list");
-  let userChoice = "";
 
   // Get user entered URL
   scrapBtn.addEventListener("click", () => {
@@ -62,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function displayScrappedData(data) {
-    console.log(data);
-
     displayTexts(data);
   }
 
