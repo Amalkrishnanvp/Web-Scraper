@@ -19,9 +19,12 @@ router.post("/", async (req, res, next) => {
     const $ = cheerio.load(data);
 
     const values = [];
+
     $(usersChoice).each((index, element) => {
       values.push($(element).text());
     });
+
+    console.log(values);
 
     res.status(200).json(values);
   } catch (error) {
@@ -32,14 +35,14 @@ router.post("/", async (req, res, next) => {
 
 function getUsersChoice(givenContent) {
   switch (givenContent) {
-    case "head":
+    case "head1":
       return "h1";
       break;
-    case "img":
-      return "img";
+    case "head2":
+      return "h2";
       break;
-    case "link":
-      return "link";
+    case "head3":
+      return "h3";
       break;
     case "para":
       return "p";

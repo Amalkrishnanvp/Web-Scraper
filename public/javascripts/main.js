@@ -3,23 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlHolder = document.querySelector(".url-holder");
   const dataShower = document.querySelector(".data-shower");
   const contentSelector = document.querySelector("#content-selector");
+  const dataList = document.querySelector(".data-list");
+  let userChoice = "";
 
   // Get user entered URL
   scrapBtn.addEventListener("click", () => {
-    let givenUrl = getUrl();
-    let givenContent = getSelectedContent();
-    // console.log(givenUrl);
-    // console.log(givenContent);
-    getScrapData(givenUrl, givenContent);
+    let givenUrl;
+    let givenContent;
+
+    if (urlHolder.value === "") {
+      alert("You must enter a URL to scrap!");
+    } else if (contentSelector.value === "choose") {
+      alert("Select the type of data you want to scrap");
+    } else {
+      givenUrl = getUrl();
+      givenContent = getSelectedContent();
+      getScrapData(givenUrl, givenContent);
+    }
   });
 
   function getSelectedContent() {
     let givenContent = "";
-    if (contentSelector.value !== "choose") {
-      givenContent = contentSelector.value;
-    } else {
-      alert("Select the type of data you want to scrap");
-    }
+    userChoice = contentSelector.value;
+    givenContent = contentSelector.value;
 
     return givenContent;
   }
@@ -27,11 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get URL
   function getUrl() {
     let givenUrl = "";
-    if (urlHolder.value) {
-      givenUrl = urlHolder.value;
-    } else {
-      alert("You must enter a URL to scrap!");
-    }
+    givenUrl = urlHolder.value;
 
     return givenUrl;
   }
@@ -61,12 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayScrappedData(data) {
     console.log(data);
+
+    displayTexts(data);
+  }
+
+  // Display text like content
+  function displayTexts(data) {
     let listContainer = "";
     data.forEach((element) => {
       const li = `<li>${element}</li>`;
       listContainer += li;
     });
 
-    dataShower.innerHTML = listContainer;
+    dataList.innerHTML = listContainer;
   }
 });

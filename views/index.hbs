@@ -12,7 +12,6 @@
           type="text"
           class="border border-black rounded-md text-sm w-full sm:w-80 md:w-96 h-12 sm:h-10 url-holder"
           placeholder="Enter your URL"
-          value="https://tailwindui.com/"
         />
         <select
           name=""
@@ -20,9 +19,9 @@
           class="rounded-md border border-black text-sm"
         >
           <option value="choose" disabled selected>Choose</option>
-          <option value="head">Headings</option>
-          <option value="img">Images</option>
-          <option value="link">Links</option>
+          <option value="head1">Heading 1</option>
+          <option value="head2">Heading 2</option>
+          <option value="head3">Heading 3</option>
           <option value="para">Paragraphs</option>
           <option value="div">Divs</option>
         </select>
@@ -34,13 +33,15 @@
       </button>
     </div>
     <div class="indicator mt-8">
-      Loading...
+      {{! Loading... }}
     </div>
     <div
       class="bg-white w-full lg:w-9/12 h-72 border border-black rounded-md px-4 py-2 mt-8 overflow-auto my-scrollbar"
     >
       <h3 class="text-center font-serif mt-2 mb-4">Scrapped Data</h3>
-      <div class="data-shower"></div>
+      <div class="data-shower">
+        <ul class="data-list list-disc list-inside space-y-2"></ul>
+      </div>
     </div>
   </div>
 </div>
